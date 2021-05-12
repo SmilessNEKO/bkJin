@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>03.Vue的组件思想 | Gridea</title>
+<link rel="shortcut icon" href="https://smilessneko.github.io/bkJin//favicon.ico?v=1620826142714">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://smilessneko.github.io/bkJin//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="03.Vue的组件思想 | Gridea - Atom Feed" href="https://smilessneko.github.io/bkJin//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Vue3 组件
+组件（Component）是 Vue.js 最强大的功能之一。
+组件可以扩展 HTML 元素，封装可重用的代码。
+组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类型的应用的界面都可以抽象为一个组件树：
+
+注册..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://smilessneko.github.io/bkJin/">
+  <img class="avatar" src="https://smilessneko.github.io/bkJin//images/avatar.png?v=1620826142714" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              03.Vue的组件思想
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-05-12
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="vue3-组件">Vue3 组件</h1>
+<p>组件（Component）是 Vue.js 最强大的功能之一。</p>
+<p>组件可以扩展 HTML 元素，封装可重用的代码。</p>
+<p>组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类型的应用的界面都可以抽象为一个组件树：</p>
+<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2017/01/components.png" alt="img" loading="lazy"></figure>
+<h1 id="注册组件的基本步骤">注册组件的基本步骤</h1>
+<ol>
+<li>
+<p>创建组件构造器</p>
+</li>
+<li>
+<p>注册组件</p>
+</li>
+<li>
+<p>使用组件</p>
+<figure data-type="image" tabindex="2"><img src="C:%5CUsers%5Cqq354%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210327142928636.png" alt="image-20210327142928636" loading="lazy"></figure>
+</li>
+</ol>
+<pre><code>在ES6中,继承写法和JAVA一样:
+class Person {...}
+从 Person 继承:
+class Student extends Person {...}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#vue3-%E7%BB%84%E4%BB%B6">Vue3 组件</a></li>
+<li><a href="#%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4">注册组件的基本步骤</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://smilessneko.github.io/bkJin/post/02vue-de-options-xuan-xiang/">
+              <h3 class="post-title">
+                02.Vue的options选项
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://smilessneko.github.io/bkJin//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
